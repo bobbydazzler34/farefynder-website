@@ -16,7 +16,7 @@ function App() {
 
       <footer id="contact" className="footer">
         <nav className="footer__links" aria-label="Footer">
-          <a href="mailto:hello@farefynder.com">Contact</a>
+          <a href="mailto:support@farefynder.com">Contact</a>
           <a href="https://github.com" target="_blank" rel="noreferrer">
             GitHub
           </a>
