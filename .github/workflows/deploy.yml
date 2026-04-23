@@ -30,9 +30,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # Custom domain at site root (e.g. https://www.farefynder.com/) needs base "/".
+      # For project pages at https://<user>.github.io/<repo>/ only, set GH_PAGES_BASE to /${{ github.event.repository.name }}/.
       - name: Build
         env:
-          GH_PAGES_BASE: /${{ github.event.repository.name }}/
+          GH_PAGES_BASE: /
         run: npm run build
 
       - name: Setup Pages

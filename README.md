@@ -36,9 +36,11 @@ After that, each push to `main` will publish the site.
 
 ## Base path notes
 
-- The workflow sets `GH_PAGES_BASE` automatically to `/<repo-name>/` for project pages.
-- For a custom domain/user site, build locally with:
+- **Custom domain at site root** (e.g. [https://www.farefynder.com/](https://www.farefynder.com/)): use `base: "/"`. The deploy workflow sets `GH_PAGES_BASE=/` so assets load from `/assets/...`.
+- **Project pages** (`https://<user>.github.io/<repo>/` without a custom domain): use `GH_PAGES_BASE=/<repo>/ npm run build` and the same value in CI if you deploy there instead.
 
-  ```bash
-  GH_PAGES_BASE=/ npm run build
-  ```
+Local production build matching CI:
+
+```bash
+GH_PAGES_BASE=/ npm run build
+```
